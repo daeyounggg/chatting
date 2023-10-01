@@ -7,7 +7,7 @@ import lombok.*;
 @Data
 @Builder
 @NoArgsConstructor @AllArgsConstructor
-public class ChatHistory extends BaseEntity{
+public class ChatHistory extends BaseEntity {
     @Id @GeneratedValue
     private Long seq;
     @Column(length=40, nullable = false)
@@ -18,8 +18,6 @@ public class ChatHistory extends BaseEntity{
 
     @ToString.Exclude
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="rommNo")
+    @JoinColumn(name="roomNo")
     private ChatRoom room;
-
-
 }

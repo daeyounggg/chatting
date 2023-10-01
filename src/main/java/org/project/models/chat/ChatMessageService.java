@@ -13,7 +13,8 @@ import org.springframework.stereotype.Service;
 public class ChatMessageService {
     private final ChatRoomRepository roomRepository;
     private final ChatHistoryRepository historyRepository;
-    private void save(ChatMessageForm form){
+
+    public void save(ChatMessageForm form) {
         Long roomNo = form.roomNo();
         ChatRoom room = roomRepository.findById(roomNo).orElseThrow(RoomNotFoundException::new);
 
